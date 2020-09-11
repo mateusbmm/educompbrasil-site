@@ -39,7 +39,7 @@ app.get('/', (req, res) => { res.render('giec/index', {layout: 'giec/layout'}) }
 
 //EduComp 2021
 app.get('/simposio/2021', (req, res) => { res.render('en-us/sobre', {layout: 'simposio/2021/layout', sobre: true}) })
-app.get('/simposio/2021/topicos-de-interesse', (req, res) => { res.render('en-us/topicos-de-interesse', {layout: 'simposio/2021/layout', topicos: true}) })
+app.get('/en-us/simposio/2021/topicos-de-interesse', (req, res) => { res.render('en-us/topicos-de-interesse', {layout: 'simposio/2021/layout-en-us', topicos: true}) })
 app.get('/simposio/2021/sobre', (req, res) => { res.render('en-us/sobre', {layout: 'simposio/2021/layout', sobre: true}) })
 app.get('/simposio/2021/datas', (req, res) => { res.render('en-us/datas', {layout: 'simposio/2021/layout', datas: true}) })
 app.get('/simposio/2021/programacao', (req, res) => { res.render('en-us/programacao', {layout: null, prog: true}) })
@@ -54,7 +54,7 @@ app.post('/email2', recaptcha.middleware.verify, async function(req, res){
   if (!req.recaptcha.error) {
       console.log(req.body)
       await emailServer.enviarEmail(req.body.email1, req.body.assunto1, req.body.mensagem1)
-      req.session.retorno = 'Email enviado com sucesso!'
+      req.session.retorno = 'Email enviado com sucesso!!'
       res.redirect('/simposio/2021/contato')
   } else {
       res.redirect('/simposio/2021/contato')
