@@ -120,6 +120,15 @@ app.get('/simposio/2021/comite-programa', (req, res) => {
         }
     ) 
 })
+app.get('/simposio/2021/certificado', (req, res) => { 
+    res.render('simposio/2021/pt-BR/certificado', 
+        {
+            layout: 'simposio/2021/pt-BR/layout', 
+            certificado: true,
+            titulo: 'Certificado'
+        }
+    ) 
+})
 //critérios de revisão
 app.get('/simposio/2021/trabalhos/criterios/trilha-1/ensaios', (req, res) => { 
     res.render('simposio/2021/pt-BR/criterios-de-revisao/criterio-trilha1', 
